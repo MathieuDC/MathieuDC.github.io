@@ -67,31 +67,30 @@ i.not-italic{
 }
 
 /*-- Header --*/
-
-header.page{
+#mdc-nav-container{
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 15px;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    padding: 15px 15px;
 }
 
 #mdc-nav-container img{
     width: 100px;
-    margin-left: 10px;
+    transition: transform 0.6s ease-out;
+}
+
+#mdc-nav-container.page img:hover{
+    cursor: pointer;
 }
 
 header.is-scrolling{
     background-color: var(--mdc-background-color);
     box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);; 
-}
-
-header.without-img{
-    justify-content: flex-end;
 }
 
 .mdc-nav-list-container{
@@ -104,11 +103,7 @@ header.without-img{
     font-family: Butler;
 }
 
-.mdc-nav-list-container li{
-    margin: 0 30px;
-}
-
-.mdc-nav-list-container a.active{
+.mdc-nav-list-container a.active, .mdc-nav-list-container a:focus{
     text-decoration: underline;
     color: var(--mdc-color-secondary);
 }
@@ -117,6 +112,10 @@ nav a{
     text-decoration: none;
     font-size: 1.3em;
     color: var(--mdc-text-primary);
+    margin: 0 30px;
+}
+.page nav a{
+    transform: translate(0, 0) scale(1);
 }
 
 nav a:hover{
@@ -124,63 +123,55 @@ nav a:hover{
     color: var(--mdc-color-secondary);
 }
 
+@keyframes NavBarTopRigth{
+    0%{
+
+    }
+
+    100%{
+        height: 20px;
+    }
+}
+
 
 /*-- Home --*/
 
-#mdc-nav-container.home{
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    padding: 0;
-    align-items: center;
-}
-
 #mdc-nav-container.home img{
-    width: 500px;
-    margin: 90px 0 0 0;
-    opacity: 0;
-    animation: AppearIn 1.5s forwards;
+    transform: translate(calc(50vw - 53px), 270px) scale(5);
+    animation: ImgFadeIn 1s backwards;
 }
 
-.home nav{
-    width: 100%;
+.mdc-nav-list-container .li-1, .mdc-nav-list-container .li-2, .mdc-nav-list-container .li-3{
+    transition: transform 0.6s ease-out;
 }
 
-.home .mdc-nav-list-container{
-    height: 180px;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    margin: 0;
-    width: 100%;
-    font-size: 1.4em;
+.home .mdc-nav-list-container .li-1{
+    transform: translate(calc(45px - 50vw + 127px), 100px) scale(1);
+    animation: Link1FadeIn 1s backwards;
+    animation-delay: .2s;
 }
 
-.home .mdc-nav-list-container li{
-    margin: 0;
-    opacity: 0;
-    animation: AppearIn 1s forwards;
+.home .mdc-nav-list-container .li-2{
+    transform: translate(calc(45px - 50vw + 227px), 100px) scale(1);
+    animation: Link2FadeIn 1s backwards;
+    animation-delay: .4s;
 }
 
-.home .mdc-nav-list-container li.li-1{
-    animation-delay: .3s;
-}
-
-.home .mdc-nav-list-container li.li-2{
+.home .mdc-nav-list-container .li-3{
+    transform: translate(calc(45px - 50vw + 327px), 100px) scale(1);
+    animation: Link3FadeIn 1s backwards;
     animation-delay: .6s;
 }
 
-.home .mdc-nav-list-container li.li-3{
-    animation-delay: .9s;
-}
-
-#mdc-home{
+.mdc-home{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 425px;
 }
 
+
 #mdc-home-title{
-    margin-top: -10px;
     font-size: 2.2em;
     font-weight: var(--mdc-font-weigth);
     text-align: center;
@@ -190,6 +181,54 @@ nav a:hover{
 
 #mdc-home-title .invisible{
     color: var(--mdc-background-color);
+}
+
+@keyframes ImgFadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(calc(50vw - 53px), 270px) scale(4);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(calc(50vw - 53px), 270px) scale(5);
+    }
+}
+
+@keyframes Link1FadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(calc(45px - 50vw + 0), 100px) scale(.8, .8);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(calc(45px - 50vw + 127px), 100px) scale(1, 1);
+    }
+}
+
+@keyframes Link2FadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(calc(45px - 50vw + 227px), 100px) scale(.8, .8);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(calc(45px - 50vw + 227px), 100px) scale(1, 1);
+    }
+}
+
+@keyframes Link3FadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(calc(45px - 50vw + 327px), 100px) scale(.8, .8);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(calc(45px - 50vw + 327px), 100px) scale(1, 1);
+    }
 }
 
 /*-- Presentation --*/
@@ -247,7 +286,6 @@ nav a:hover{
         transform: translateY(0);
         opacity: 1;
     }
-
 }
 
 /**---  Expertises ---*/
@@ -265,6 +303,8 @@ nav a:hover{
     text-align: center;
     color: var(--mdc-text-primary);
     margin-bottom: 20px;
+    opacity: 0;
+    animation: TitleSlideIn 1.5s forwards;
 }
 
 .mdc-expertise-buttons{
@@ -411,6 +451,18 @@ nav a:hover{
     }
 }
 
+@keyframes TitleSlideIn{
+    0%{
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /**--- Contact ---**/
 
 #mdc-contact-container{
@@ -428,6 +480,9 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    animation: SlideInLeft 1s forwards;
+    will-change: transform, opacity;
 }
 
 .mdc-contact-info{
@@ -457,6 +512,32 @@ nav a:hover{
     width: 680px;
     margin: 0 40px;
     border: solid 1px var(--mdc-color-secondary);
+    opacity: 0;
+    animation: SlideInRigth 1s forwards;
+}
+
+@keyframes SlideInLeft{
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideInRigth{
+    0%{
+        transform: translateX(50%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /*--- Footer --*/

@@ -38,46 +38,44 @@
 
 <body>
 
-    <header id="mdc-nav-container"  class="page">
-        <a href="./index.html"><img src="./assets/images/logo-kbk-4-fin-inv.png" alt="KBK"></a>
-        <nav>
-            <div class="nav-container">
-                <ul class="mdc-nav-list-container">
-                    <li><a href="./presentation.html" title="">Présentation</a></li>
-                    <li><a href="./expertise.html" title="">Expertises</a></li>
-                    <li><a href="./contact.html" class="active" title="">Contact</a></li>
-                </ul>
-            </div>
+    <header id="mdc-nav-container" class="page">
+        <img src="./assets/images/logo-kbk-4-fin-inv.png" alt="KBK">
+        <nav class="mdc-nav-list-container">
+            <a class="li-1" href="/presentation.html" title="">Présentation</a>
+            <a class="li-2" href="/expertise.html" title="">Expertises</a>
+            <a class="li-3 active" href="/contact.html" title="">Contact</a>
         </nav>
     </header>
 
 
 
-    <main id="mdc-contact-container">
-        <div class="mdc-contact-infos">
-            <div class="mdc-contact-info">
-                <span class="mdc-contact-info-title">
-                    <img src="./assets/images/old-phone-icon.svg"  alt="icon">
-                    Téléphone
-                </span>
-                <span class="mdc-contact-info-content">04 91 54 34 31</span>
+    <main id="swup">
+        <div id="mdc-contact-container">
+            <div class="mdc-contact-infos">
+                <div class="mdc-contact-info">
+                    <span class="mdc-contact-info-title">
+                        <img src="./assets/images/old-phone-icon.svg"  alt="icon">
+                        Téléphone
+                    </span>
+                    <span class="mdc-contact-info-content">04 91 54 34 31</span>
+                </div>
+                <div class="mdc-contact-info">
+                    <span class="mdc-contact-info-title">
+                        <img src="./assets/images/maps-pointer-icon.svg"  alt="icon">
+                        Adresse
+                    </span>
+                    <span class="mdc-contact-info-content">21 Cours Pierre Puget <br> <strong class="not-bold">Marseille</strong>, France</span>
+                </div>
+                <div class="mdc-contact-info">
+                    <span class="mdc-contact-info-title">
+                        <img src="./assets/images/mail-icon.svg"  alt="icon">
+                        Mail
+                    </span>
+                    <a class="mdc-contact-info-content no-style" href="mailto:benhamoukoskas.karen@gmail.com">benhamoukoskas.karen@gmail.com</a>
+                </div>
             </div>
-            <div class="mdc-contact-info">
-                <span class="mdc-contact-info-title">
-                    <img src="./assets/images/maps-pointer-icon.svg"  alt="icon">
-                    Adresse
-                </span>
-                <span class="mdc-contact-info-content">21 Cours Pierre Puget <br> <strong class="not-bold">Marseille</strong>, France</span>
-            </div>
-            <div class="mdc-contact-info">
-                <span class="mdc-contact-info-title">
-                    <img src="./assets/images/mail-icon.svg"  alt="icon">
-                    Mail
-                </span>
-                <a class="mdc-contact-info-content no-style" href="mailto:benhamoukoskas.karen@gmail.com">benhamoukoskas.karen@gmail.com</a>
-            </div>
+            <div id="map"></div>
         </div>
-        <div id="map"></div>
     </main>
 
     <!--
@@ -87,9 +85,9 @@
         </div>
     </footer>
 -->
-    <script src="./js/jquery-3.5.1.min.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz9cuPTyuLg4_Oyx-E7oFyG6iyHgKgO8c&callback=initMap"></script>
-    <script src="./js/main.js" ></script>
+    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <script defer src="./js/main.js" ></script>
     <script src="./js/contact.js" ></script>
 
 </body>
