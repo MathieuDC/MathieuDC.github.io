@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./assets/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
@@ -32,12 +32,49 @@
 
 
 
-    <title>Karen BENHAMOU-KOSKAS</title>  
+    <title>Karen Benhamou-Koskas</title>
     <link href="./style/main.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1 style="margin: auto;">Coming soon</h1>
+    <header id="mdc-nav-container" class="home">
+        <img id="mdc-menu-logo" src="./assets/images/logo-kbk-4-fin-inv.png" onClick="handleClickLogo()" alt="KBK">
+        <nav class="mdc-nav-list-container">
+            <a id="li-1" href="/presentation.html" title="">Présentation</a>
+            <a id="li-2" href="/expertise.html" title="">Expertises</a>
+            <a id="li-3" href="/contact.html" title="">Contact</a>
+        </nav>
+        <div id="mdc-menu-button" class="btn not-active" onClick="handleClickMenu()">
+            <span class="mdc-menu-btn-line"></span>
+            <span class="mdc-menu-btn-line"></span>
+            <span class="mdc-menu-btn-line"></span>
+        </div>
+    </header>
+
+
+    <main id="swup" class="mdc-transition-fade-out">
+        <nav id="mdc-sidenav">
+            <a id="li-side-1" href="#" title="">Présentation</a>
+            <a id="li-side-2" href="/expertise.html" title="">Expertises</a>
+            <a id="li-side-3" href="/contact.html" title="">Contact</a>
+        </nav>
+        <div id="mdc-container" class="mdc-home">
+            <h1 id='mdc-home-title'>Marseille 6 ème<br><i class='invisible'>Cabinet d'avocat</i></h1>
+        </div>
+    </main>
+
+
+    <footer>
+        <!--
+        <div class="mdc-footer-container">
+            <p>Tout droit réservé | © Designed by MDC</p>
+        </div>
+        -->
+    </footer>
+    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js" data-swup-ignore-script></script>
+    <script defer src="./js/SwupScriptsPlugin.min.js" data-swup-ignore-script></script> 
+    <script defer src="./js/main.js" data-swup-ignore-script></script>
+
 </body>
 
 </html>

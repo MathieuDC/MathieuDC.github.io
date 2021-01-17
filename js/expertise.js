@@ -95,7 +95,6 @@ function getNbRows(){
   }
   return 5;
 }
-console.log(getNbRows());
 
 insertExpertiseContents(getNbRows());
 

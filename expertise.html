@@ -24,15 +24,25 @@
 <body>
 
     <header id="mdc-nav-container" class="page">
-        <img src="./assets/images/logo-kbk-4-fin-inv.png" alt="KBK">
+        <img id="mdc-menu-logo" src="./assets/images/logo-kbk-4-fin-inv.png" onClick="handleClickLogo()" alt="KBK">
         <nav class="mdc-nav-list-container">
-            <a class="li-1" href="/presentation.html" title="">Présentation</a>
-            <a class="li-2 active" href="/expertise.html" title="">Expertises</a>
-            <a class="li-3" href="/contact.html" title="">Contact</a>
+            <a id="li-1" href="/presentation.html" title="">Présentation</a>
+            <a id="li-2" class="active" href="/expertise.html" title="">Expertises</a>
+            <a id="li-3" href="/contact.html" title="">Contact</a>
         </nav>
+        <div id="mdc-menu-button" class="btn not-active" onClick="handleClickMenu()">
+            <span class="mdc-menu-btn-line"></span>
+            <span class="mdc-menu-btn-line"></span>
+            <span class="mdc-menu-btn-line"></span>
+        </div>
     </header>
-    <main id="swup">
-        <div class="mdc-expertise-container">
+    <main id="swup"  class="mdc-transition-fade-out">
+        <nav id="mdc-sidenav">
+            <a id="li-side-1" href="#" title="">Présentation</a>
+            <a id="li-side-2" href="/expertise.html" title="">Expertises</a>
+            <a id="li-side-3" href="/contact.html" title="">Contact</a>
+        </nav>
+        <div id="mdc-container" class="mdc-expertise-container">
             <h1>Karen Benhamou-Koskas vous accompagne sur ces domaines d'expertise:</h1>
             <div class="mdc-expertise-buttons">
                 <button id="mdc-expertise-button-commercial" class="mdc-expertise-button" type="button" onclick="handleExpertiseClick('commercial')">Droit Commercial</button>
@@ -42,6 +52,7 @@
                 <button id="mdc-expertise-button-mediation" class="mdc-expertise-button" type="button" onclick="handleExpertiseClick('mediation')">Médiation</button>
             </div>
         </div>
+        <script src="./js/expertise.js" ></script>
     </main>
 
     <!--
@@ -49,9 +60,9 @@
         <span>Tout droit réservé | © Designed by MDC</span>
     </footer>
     --> 
-    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
-    <script defer src="./js/main.js" ></script>
-    <script defer src="./js/expertise.js" ></script>
+    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js" data-swup-ignore-script></script>
+    <script defer src="./js/SwupScriptsPlugin.min.js" data-swup-ignore-script></script> 
+    <script defer src="./js/main.js" data-swup-ignore-script></script>
 
 </body>
 
