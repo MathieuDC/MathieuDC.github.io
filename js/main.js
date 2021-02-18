@@ -171,7 +171,15 @@ function handleClickMenu() {
     document.body.classList.toggle('sidenav-displaying')
 }
 
+function closeSidenav() {
+    document.body.classList.remove('sidenav-displaying');
+    document.getElementById('mdc-menu-button').classList.remove('active');
+    document.getElementById('mdc-menu-button').classList.add('not-active');
+    document.getElementById('mdc-container').classList.remove('sidenav-displaying');
+}
+
 /*===========================================*/
+
 function handleClickLogo() {
     if(window.location.pathname.includes('index'))
         return;
@@ -196,6 +204,8 @@ document.addEventListener('swup:clickLink', (event) => {
     else if (path.includes('contact')) {
         document.getElementById('li-3').classList.remove('active');
     }
+
+    closeSidenav();
 });
 
 swup.on('contentReplaced', () => {
