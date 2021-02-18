@@ -105,6 +105,20 @@ function getNbRows() {
     return 5;
 }
 
+function animateExpertiseButton() {
+    buttons = document.getElementsByClassName('mdc-expertise-button');
+    let delay = 0;
+    for (let i = 0; i < buttons.length; i++) {
+        const button = buttons[i];
+        button.style.opacity = 1;
+        button.style.animation = '1s linear 1s infinite alternate LinkColored';
+        button.style.animationDelay = delay + 's';
+        delay += 1;
+    }
+}
+
+setTimeout(animateExpertiseButton, 1000)
+
 /* ==== */
 
 function disactivateContents() {
@@ -220,4 +234,5 @@ swup.on('contentReplaced', () => {
     else if (path.includes('contact')) {
         document.getElementById('li-3').classList.add('active');
     }
+
 });

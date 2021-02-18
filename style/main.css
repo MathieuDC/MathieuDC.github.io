@@ -190,11 +190,11 @@ nav a:hover{
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 26vh;
+    padding-top: 18vh;
     z-index: -1;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     background-color: var(--mdc-background-color);
@@ -206,6 +206,7 @@ nav a:hover{
 #mdc-sidenav.displaying{
     opacity: 1;
     z-index: 500;
+    display: flex;
 }
 
 #mdc-container{
@@ -323,11 +324,25 @@ body.sidenav-displaying{
     }
 }
 
+@keyframes LinkColored {
+    0% {
+        color: var(--mdc-text-primary);
+    }
+    100% {
+        color: var(--mdc-color-secondary);
+    }
+}
+
 /*-- Home --*/
 
 #mdc-nav-container.home #mdc-menu-logo{
     transform: translate(calc(-15px + 50vw - 50%), var(--mdc-home-logo-margin)) scale(var(--mdc-home-logo-scale));
     animation: HomeLogoFadeIn 1s backwards;
+}
+
+#li-1.color{
+    color: #39577f;
+    transition: color ease-out 1s !important;
 }
 
 .mdc-nav-list-container #li-1, .mdc-nav-list-container #li-2, .mdc-nav-list-container #li-3{
@@ -375,14 +390,14 @@ body.sidenav-displaying{
 @media (max-width: 450px){
     :root{
         --mdc-home-logo-scale: 2;
-        --mdc-link-distance: 20vh;
+        --mdc-link-distance: 7vh;
     }
 
         #mdc-nav-container.home #mdc-menu-logo{
         transform: none;
         position: relative;
         width: 40vw;
-        top: 60vh;
+        top: 66vh;
         left: calc(-15px + 50vw - 20vw);
         transition: top 0.8s ease-out, left 0.8s ease-out, width 0.8s ease-out;
         animation: HomeLogoFadeInSmallScreen 1s backwards;
@@ -408,14 +423,14 @@ body.sidenav-displaying{
 
     #mdc-nav-container.home #li-2{
         left: calc(-30px + 50vw - 20vw);
-        top: calc(var(--mdc-link-distance) + 16vh);
+        top: calc(var(--mdc-link-distance) + 25vh);
         animation: LinkFadeInSmallScreen 1s backwards;
         animation-delay: .2s;
     }
 
     #mdc-nav-container.home #li-3{
         left: calc(-30px + 50vw - 20vw);
-        top: calc(var(--mdc-link-distance) + 32vh);
+        top: calc(var(--mdc-link-distance) + 50vh);
         animation: Link3FadeInSmallScreen 1s backwards;
     }
 
@@ -424,7 +439,7 @@ body.sidenav-displaying{
     }
 
     .mdc-home{
-        margin-top: 71vh;
+        margin-top: 80vh;
     }
 } 
 
@@ -524,6 +539,7 @@ body.sidenav-displaying{
     border-radius: 50%;
     border-color: var(--mdc-color-secondary);
     max-width: 325px;
+    width: 75vw;
     opacity: 0;
     animation: AppearIn 1s forwards;
 }
@@ -696,7 +712,8 @@ body.sidenav-displaying{
     animation-delay: .15s;
 }
 #mdc-expertise-button-circulation{
-    animation-delay: .3s;
+    /* animation-delay: .3s; */
+    opacity: 1;
 }
 #mdc-expertise-button-real-estate{
     animation-delay: .45s;
