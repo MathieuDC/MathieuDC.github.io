@@ -156,6 +156,10 @@ function handleExpertiseClick(expertise) {
         content.classList.add('active');
         content.style.maxHeight = content.scrollHeight + "px";
     }
+    setTimeout(() => {
+        location.href = "#";
+        location.href = "#" + idButton;
+    }, 400)
 }
 
 function expertise() {
@@ -207,8 +211,9 @@ const swup = new Swup({
 document.addEventListener('swup:clickLink', (event) => {
     const navEl = document.getElementById('mdc-nav-container');
     navEl.classList.remove('home');
+    document.body.classList.remove('home');
     navEl.classList.add('page');
-    const path = window.location.pathname
+    const path = window.location.pathname;
     if (path.includes('presentation')) {
         document.getElementById('li-1').classList.remove('active');
     }
@@ -218,11 +223,13 @@ document.addEventListener('swup:clickLink', (event) => {
     else if (path.includes('contact')) {
         document.getElementById('li-3').classList.remove('active');
     }
-
     closeSidenav();
 });
 
-swup.on('contentReplaced', () => {
+swup.on('willReplaceContent', () => {
+    window.scrollTo(0,0);
+});
+swup.on('animationOutDone', () => {
     const path = window.location.pathname
     if (path.includes('presentation')) {
         document.getElementById('li-1').classList.add('active');
@@ -234,5 +241,4 @@ swup.on('contentReplaced', () => {
     else if (path.includes('contact')) {
         document.getElementById('li-3').classList.add('active');
     }
-
 });
