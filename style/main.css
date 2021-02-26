@@ -13,7 +13,6 @@
 
 :root{
     --mdc-text-primary: #3f3f3f;
-    /*--mdc-color-secondary: #dba07c; #f3eee8*/
     --mdc-color-secondary: #39577f;
     --mdc-background-color: #fcfcfc;
     --mdc-big-width: 950px;
@@ -401,8 +400,8 @@ body.sidenav-displaying{
         width: 50vw;
         top: 40vh;
         left: calc(-15px + 50vw - 25vw);
-        /* transition: top 0.8s ease-out, left 0.8s ease-out, width 0.8s ease-out; */
-        /* animation: HomeLogoFadeInSmallScreen 1s backwards; */
+        transition: top 0.8s ease-out, left 0.8s ease-out, width 0.8s ease-out;
+        animation: HomeLogoFadeInSmallScreen 1s backwards;
     }
 
     #mdc-nav-container.home .mdc-nav-list-container a{
